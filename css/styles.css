@@ -1,32 +1,41 @@
 /* Shared styles for the portal and every tool page.
-   Simple and neutral for now; the visual design comes later. */
+   Visual design: "Field Manual" — warm paper, black ink, ruled lines,
+   numbered sections and safety orange as the single accent. */
 
-/* ---------- Theme colors ---------- */
+/* ---------- Theme colors and fonts ---------- */
 :root,
 :root[data-theme="light"] {
-  --bg: #ffffff;
-  --surface: #f4f4f5;
-  --text: #1a1a1a;
-  --text-muted: #4a4a4a;
-  --border: #8a8a8a;
-  --link: #0b57d0;
-  --focus: #0b57d0;
-  --ok: #146c2e;
-  --bad: #c5221f;
+  --bg: #f6f2e9;          /* paper */
+  --surface: #fffdf8;     /* card */
+  --text: #1f1c17;        /* ink */
+  --text-muted: #5a5246;
+  --border: #b9af9c;      /* decorative lines */
+  --control: #857a68;     /* borders of buttons and answer choices */
+  --link: #a63c0b;        /* safety orange */
+  --focus: #a63c0b;
+  --ok: #2f6b3a;
+  --bad: #a63c0b;
   color-scheme: light;
 }
 
 :root[data-theme="dark"] {
-  --bg: #121212;
-  --surface: #1f1f1f;
-  --text: #f0f0f0;
-  --text-muted: #c4c4c4;
-  --border: #8a8a8a;
-  --link: #8ab4f8;
-  --focus: #8ab4f8;
-  --ok: #7ee2a8;
-  --bad: #ff9b94;
+  --bg: #1b1915;
+  --surface: #25221d;
+  --text: #f2ede2;
+  --text-muted: #bdb3a3;
+  --border: #3a352d;
+  --control: #8c8273;
+  --link: #ff9461;
+  --focus: #ff9461;
+  --ok: #8fd3a0;
+  --bad: #ff9461;
   color-scheme: dark;
+}
+
+:root {
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-heading: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --radius: 2px;
 }
 
 /* ---------- Base ---------- */
@@ -40,9 +49,16 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
 }
 
 a {
@@ -61,10 +77,19 @@ a {
   padding: 0 1rem;
 }
 
+/* Small uppercase label, used for section names and progress. */
+.label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
 /* ---------- Header (same on every page) ---------- */
 .site-header {
-  border-bottom: 1px solid var(--border);
-  background: var(--surface);
+  border-bottom: 2px solid var(--text);
+  background: var(--bg);
 }
 
 .site-header .container {
@@ -78,7 +103,8 @@ a {
 }
 
 .site-name {
-  font-size: 1.125rem;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text);
   text-decoration: none;
@@ -90,14 +116,19 @@ a {
   gap: 1rem;
 }
 
+.site-nav a {
+  font-weight: 600;
+}
+
 .theme-toggle {
   min-height: 44px;
   padding: 0.5rem 0.875rem;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--bg);
+  border: 1px solid var(--text);
+  border-radius: var(--radius);
+  background: transparent;
   color: var(--text);
   font: inherit;
+  font-size: 0.9375rem;
   cursor: pointer;
 }
 
@@ -106,7 +137,7 @@ a {
   min-height: 44px;
   padding: 0.5rem 1.25rem;
   border: 1px solid var(--text);
-  border-radius: 6px;
+  border-radius: var(--radius);
   background: var(--text);
   color: var(--bg);
   font: inherit;
@@ -115,26 +146,25 @@ a {
 }
 
 .btn-secondary {
-  border-color: var(--border);
-  background: var(--bg);
+  background: transparent;
   color: var(--text);
 }
 
 /* ---------- Main content ---------- */
 main.container {
-  padding-top: 1.5rem;
+  padding-top: 2rem;
   padding-bottom: 3rem;
 }
 
 h1 {
-  font-size: 1.75rem;
-  line-height: 1.2;
+  font-size: 2rem;
+  line-height: 1.1;
   margin: 0 0 0.5rem;
 }
 
 .intro {
   color: var(--text-muted);
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.75rem;
   max-width: 40rem;
 }
 
@@ -149,30 +179,52 @@ h1 {
 }
 
 .tool-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   height: 100%;
-  padding: 1rem 1.25rem;
+  padding: 1.125rem 1.25rem;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   background: var(--surface);
   color: var(--text);
   text-decoration: none;
+}
+
+.tool-card:hover {
+  border-color: var(--text);
 }
 
 .tool-card:hover .tool-card-title {
   text-decoration: underline;
 }
 
-.tool-card-title {
-  display: block;
-  font-size: 1.125rem;
+/* Number + label row at the top of a card, above a ruled line. */
+.tool-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.tool-card-number {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
   font-weight: 700;
+  line-height: 1;
   color: var(--link);
-  margin-bottom: 0.25rem;
+}
+
+.tool-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.3125rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .tool-card-text {
-  display: block;
   color: var(--text-muted);
 }
 
@@ -183,7 +235,7 @@ h1 {
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 }
 

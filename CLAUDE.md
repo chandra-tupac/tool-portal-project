@@ -5,6 +5,8 @@
 - Plain HTML, CSS, and JavaScript only.
 - No frameworks or libraries (no React, Vue, Tailwind, etc.).
 - No build step: files are opened or served exactly as written.
+- Fonts: Source Serif 4 (headings) and Source Sans 3 (body), loaded from
+  Google Fonts, with standard fonts as a fallback when offline.
 
 ## Project Structure
 
@@ -49,11 +51,13 @@ factors in aviation.
 1. **Portal + first tool.**
    - [x] Portal: homepage, shared header and theme toggle, and a
      placeholder "Tool 1 — coming soon" card to test navigation.
-     Styling is simple and neutral; the visual design comes later.
    - [x] Dirty Dozen tool (replaced the placeholder): study cards for
      the 12 common causes of human error in aircraft maintenance, then
      a 12-question quiz (maintenance scenarios, 4 choices each) with
      instant feedback, a score and links to the factors to review.
+   - [x] Visual design "Field Manual": warm paper, black ink, ruled
+     lines, numbered cards and safety orange as the one accent color.
+     Colors live as variables in `css/styles.css`.
 2. **More tools.** Add further human-factors tools one at a time
    (ideas: an IMSAFE fitness self-check, a fatigue estimator).
 3. **Portal polish.** Once there are several tools: group or filter

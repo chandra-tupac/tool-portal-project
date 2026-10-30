@@ -48,7 +48,10 @@
       item.id = "factor-" + factor.id;
       item.tabIndex = -1; // lets the results links move focus here
 
-      item.appendChild(el("h3", "factor-name", (index + 1) + ". " + factor.name));
+      var heading = el("h3", "factor-name");
+      heading.appendChild(el("span", "factor-number", String(index + 1).padStart(2, "0")));
+      heading.appendChild(document.createTextNode(" " + factor.name));
+      item.appendChild(heading);
       item.appendChild(el("p", "factor-meaning", factor.meaning));
       item.appendChild(el("p", "factor-nets-label", "Safety nets:"));
 

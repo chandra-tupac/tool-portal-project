@@ -2,9 +2,11 @@
    Colors come from the shared theme in css/styles.css. */
 
 h2 {
-  font-size: 1.375rem;
-  line-height: 1.25;
-  margin: 0 0 0.75rem;
+  font-size: 1.625rem;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
 }
 
 h2:focus,
@@ -38,13 +40,18 @@ h2:focus,
 .factor-card {
   padding: 1rem 1.25rem;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   background: var(--surface);
 }
 
 .factor-name {
-  font-size: 1.0625rem;
-  margin: 0 0 0.25rem;
+  font-size: 1.1875rem;
+  line-height: 1.25;
+  margin: 0 0 0.5rem;
+}
+
+.factor-number {
+  color: var(--link);
 }
 
 .factor-meaning {
@@ -71,7 +78,7 @@ h2:focus,
 .scenario {
   max-width: 40rem;
   margin: 0 0 1.25rem;
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
 }
 
 .choices {
@@ -88,8 +95,8 @@ h2:focus,
   width: 100%;
   min-height: 48px;
   padding: 0.625rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: 6px;
+  border: 1px solid var(--control);
+  border-radius: var(--radius);
   background: var(--surface);
   color: var(--text);
   font: inherit;
@@ -130,7 +137,7 @@ h2:focus,
 .feedback {
   max-width: 40rem;
   padding: 0.75rem 1rem;
-  border-radius: 6px;
+  border-radius: var(--radius);
   background: var(--surface);
 }
 
