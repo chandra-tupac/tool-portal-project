@@ -1,0 +1,172 @@
+/* Shared styles for the portal and every tool page.
+   Simple and neutral for now; the visual design comes later. */
+
+/* ---------- Theme colors ---------- */
+:root,
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --surface: #f4f4f5;
+  --text: #1a1a1a;
+  --text-muted: #4a4a4a;
+  --border: #8a8a8a;
+  --link: #0b57d0;
+  --focus: #0b57d0;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #121212;
+  --surface: #1f1f1f;
+  --text: #f0f0f0;
+  --text-muted: #c4c4c4;
+  --border: #8a8a8a;
+  --link: #8ab4f8;
+  --focus: #8ab4f8;
+  color-scheme: dark;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--link);
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.container {
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ---------- Header (same on every page) ---------- */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.site-header .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.site-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  min-height: 44px;
+  padding: 0.5rem 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+/* ---------- Main content ---------- */
+main.container {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+}
+
+.intro {
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+  max-width: 40rem;
+}
+
+/* ---------- Tool cards ---------- */
+.tool-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* phone */
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tool-card {
+  display: block;
+  height: 100%;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.tool-card:hover .tool-card-title {
+  text-decoration: underline;
+}
+
+.tool-card-title {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--link);
+  margin-bottom: 0.25rem;
+}
+
+.tool-card-text {
+  display: block;
+  color: var(--text-muted);
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .tool-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .tool-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

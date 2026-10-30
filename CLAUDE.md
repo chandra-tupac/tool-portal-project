@@ -8,13 +8,15 @@
 
 ## Project Structure
 
-The project is nearly empty for now:
-
+- `index.html` – portal homepage (one card per tool)
+- `css/styles.css` – shared styles and light/dark theme colors
+- `js/theme.js` – shared light/dark theme toggle
+- `tools/<tool-name>/index.html` – one folder per tool
+  (now: `tools/tool-1/`, a placeholder)
 - `README.md` – short project readme
 - `CLAUDE.md` – this file
 
-All files currently live at the top level. Update this section as folders
-(for example for pages, styles, and scripts) are added.
+Update this section as files and folders are added.
 
 ## Key Requirements
 
@@ -42,10 +44,13 @@ factors in aviation.
   toggle) in `js/`.
 
 ### Phases
-1. **Portal + first tool.** Homepage, shared header and theme toggle,
-   and the Dirty Dozen tool: a study page explaining the 12 common
-   causes of human error, then a 12-question quiz with instant
-   feedback and a score at the end.
+1. **Portal + first tool.**
+   - [x] Portal: homepage, shared header and theme toggle, and a
+     placeholder "Tool 1 — coming soon" card to test navigation.
+     Styling is simple and neutral; the visual design comes later.
+   - [ ] Dirty Dozen tool: a study page explaining the 12 common
+     causes of human error, then a 12-question quiz with instant
+     feedback and a score at the end. Replaces the placeholder.
 2. **More tools.** Add further human-factors tools one at a time
    (ideas: an IMSAFE fitness self-check, a fatigue estimator).
 3. **Portal polish.** Once there are several tools: group or filter
