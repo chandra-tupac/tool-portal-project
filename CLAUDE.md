@@ -11,8 +11,10 @@
 - `index.html` – portal homepage (one card per tool)
 - `css/styles.css` – shared styles and light/dark theme colors
 - `js/theme.js` – shared light/dark theme toggle
-- `tools/<tool-name>/index.html` – one folder per tool
-  (now: `tools/tool-1/`, a placeholder)
+- `tools/<tool-name>/` – one folder per tool, with its own `index.html`
+  - `tools/dirty-dozen/` – Dirty Dozen tool: `index.html` (page),
+    `data.js` (factors and quiz scenarios), `quiz.js` (logic),
+    `style.css` (tool-only styles)
 - `README.md` – short project readme
 - `CLAUDE.md` – this file
 
@@ -48,9 +50,10 @@ factors in aviation.
    - [x] Portal: homepage, shared header and theme toggle, and a
      placeholder "Tool 1 — coming soon" card to test navigation.
      Styling is simple and neutral; the visual design comes later.
-   - [ ] Dirty Dozen tool: a study page explaining the 12 common
-     causes of human error, then a 12-question quiz with instant
-     feedback and a score at the end. Replaces the placeholder.
+   - [x] Dirty Dozen tool (replaced the placeholder): study cards for
+     the 12 common causes of human error in aircraft maintenance, then
+     a 12-question quiz (maintenance scenarios, 4 choices each) with
+     instant feedback, a score and links to the factors to review.
 2. **More tools.** Add further human-factors tools one at a time
    (ideas: an IMSAFE fitness self-check, a fatigue estimator).
 3. **Portal polish.** Once there are several tools: group or filter

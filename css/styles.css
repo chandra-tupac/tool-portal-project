@@ -11,6 +11,8 @@
   --border: #8a8a8a;
   --link: #0b57d0;
   --focus: #0b57d0;
+  --ok: #146c2e;
+  --bad: #c5221f;
   color-scheme: light;
 }
 
@@ -22,6 +24,8 @@
   --border: #8a8a8a;
   --link: #8ab4f8;
   --focus: #8ab4f8;
+  --ok: #7ee2a8;
+  --bad: #ff9b94;
   color-scheme: dark;
 }
 
@@ -95,6 +99,25 @@ a {
   color: var(--text);
   font: inherit;
   cursor: pointer;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  min-height: 44px;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--text);
+  border-radius: 6px;
+  background: var(--text);
+  color: var(--bg);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  border-color: var(--border);
+  background: var(--bg);
+  color: var(--text);
 }
 
 /* ---------- Main content ---------- */

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dirty Dozen — Tool Portal</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../js/theme.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-name" href="../../index.html">Tool Portal</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="../../index.html">Home</a>
+        <button type="button" id="theme-toggle" class="theme-toggle">Switch to dark theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>The Dirty Dozen</h1>
+    <p class="intro">The Dirty Dozen are 12 common causes of human error in aircraft maintenance, first put together by Transport Canada in the early 1990s. Study the 12 factors, then test yourself with the quiz.</p>
+
+    <!-- Study part -->
+    <section id="study" aria-labelledby="study-heading">
+      <h2 id="study-heading" tabindex="-1">Study the 12 factors</h2>
+      <ul id="factor-grid" class="factor-grid"></ul>
+
+      <div class="section-actions">
+        <button type="button" id="start-quiz" class="btn">Start quiz</button>
+      </div>
+    </section>
+
+    <!-- Quiz part (shown after "Start quiz") -->
+    <section id="quiz" aria-labelledby="quiz-heading" hidden>
+      <div id="question-view">
+        <h2 id="quiz-heading" tabindex="-1">Quiz: which factor is this?</h2>
+        <p id="progress" class="progress"></p>
+        <p id="scenario" class="scenario"></p>
+        <ul id="choices" class="choices" aria-label="Answer choices"></ul>
+
+        <div aria-live="polite">
+          <div id="feedback" class="feedback" hidden></div>
+        </div>
+
+        <div class="section-actions">
+          <button type="button" id="next-button" class="btn" hidden>Next question</button>
+          <button type="button" id="back-to-study" class="btn btn-secondary">Back to study cards</button>
+        </div>
+      </div>
+
+      <div id="results-view" hidden>
+        <h2 id="results-heading" tabindex="-1">Your results</h2>
+        <p id="score"></p>
+        <div id="missed">
+          <p>Factors to review (opens the study card):</p>
+          <ul id="missed-list"></ul>
+        </div>
+        <div class="section-actions">
+          <button type="button" id="try-again" class="btn">Try again</button>
+          <button type="button" id="results-study" class="btn btn-secondary">Back to study cards</button>
+        </div>
+      </div>
+    </section>
+
+    <p class="note">For learning only. This is not official training material.</p>
+    <p><a href="../../index.html">← Back to all tools</a></p>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>

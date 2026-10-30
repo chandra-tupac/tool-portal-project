@@ -1,0 +1,157 @@
+/* Styles only used by the Dirty Dozen tool.
+   Colors come from the shared theme in css/styles.css. */
+
+h2 {
+  font-size: 1.375rem;
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+}
+
+h2:focus,
+.factor-card:focus {
+  outline: none; /* focused by script, not by the keyboard */
+}
+
+.section-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.note {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-top: 2rem;
+}
+
+/* ---------- Study cards ---------- */
+.factor-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* phone */
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.factor-card {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.factor-name {
+  font-size: 1.0625rem;
+  margin: 0 0 0.25rem;
+}
+
+.factor-meaning {
+  margin: 0 0 0.5rem;
+}
+
+.factor-nets-label {
+  margin: 0;
+  font-weight: 600;
+}
+
+.factor-nets {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Quiz ---------- */
+.progress {
+  color: var(--text-muted);
+  margin: 0 0 0.5rem;
+}
+
+.scenario {
+  max-width: 40rem;
+  margin: 0 0 1.25rem;
+  font-size: 1.0625rem;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  max-width: 40rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.choice {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.625rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.choice:hover:not(:disabled) {
+  border-color: var(--text);
+}
+
+.choice:disabled {
+  cursor: default;
+}
+
+.choice.is-correct,
+.feedback.is-correct {
+  border: 2px solid var(--ok);
+}
+
+.choice.is-wrong,
+.feedback.is-wrong {
+  border: 2px solid var(--bad);
+}
+
+.choice.is-correct,
+.feedback.is-correct strong {
+  color: var(--ok);
+  font-weight: 700;
+}
+
+.choice.is-wrong,
+.feedback.is-wrong strong {
+  color: var(--bad);
+  font-weight: 700;
+}
+
+.feedback {
+  max-width: 40rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  background: var(--surface);
+}
+
+.feedback p {
+  margin: 0.25rem 0 0;
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .factor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .choices {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .factor-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
