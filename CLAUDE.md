@@ -22,6 +22,8 @@ All files currently live at the top level. Update this section as folders
    tablet, and phone.
 2. **Light/dark theme:** users can toggle between a light and a dark theme.
    The default is the light theme.
+3. **Readable text:** text must stay easy to read, with good contrast
+   between text and background, in both the light and the dark theme.
 
 ## Rules for Claude
 
